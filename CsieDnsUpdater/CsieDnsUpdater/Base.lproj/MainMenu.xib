@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.Cocoa.XIB" version="3.0" toolsVersion="7702" systemVersion="14B25" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" customObjectInstantitationMethod="direct">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="7702"/>
+    </dependencies>
+    <objects>
+        <customObject id="-2" userLabel="File's Owner" customClass="NSApplication"/>
+        <customObject id="-1" userLabel="First Responder" customClass="FirstResponder"/>
+        <customObject id="-3" userLabel="Application" customClass="NSObject"/>
+        <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="CsieDnsUpdater" customModuleProvider="target"/>
+        <customObject id="ShG-Qx-nxq" customClass="StatusMenuController" customModule="CsieDnsUpdater" customModuleProvider="target">
+            <connections>
+                <outlet property="dnsStatusView" destination="1SY-xp-Wwb" id="LNi-rE-ZsK"/>
+                <outlet property="statusMenu" destination="r5J-td-xep" id="Z8r-Tg-d3L"/>
+            </connections>
+        </customObject>
+        <menu id="r5J-td-xep">
+            <items>
+                <menuItem title="DNSSTATUS" id="oQ5-Np-Pwm">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                </menuItem>
+                <menuItem title="設定" id="iiQ-m6-xz8">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="preferencesClicked:" target="ShG-Qx-nxq" id="VCk-ob-AYM"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="手動更新" id="io5-P8-9Hf">
+                    <connections>
+                        <action selector="updateClicked:" target="ShG-Qx-nxq" id="oe5-V8-fb9"/>
+                    </connections>
+                </menuItem>
+                <menuItem title="結束程式" id="8QD-qa-bXy">
+                    <modifierMask key="keyEquivalentModifierMask"/>
+                    <connections>
+                        <action selector="quitClicked:" target="ShG-Qx-nxq" id="kdX-00-oTX"/>
+                    </connections>
+                </menuItem>
+            </items>
+            <point key="canvasLocation" x="273" y="166.5"/>
+        </menu>
+        <customView id="1SY-xp-Wwb" customClass="DNSView" customModule="CsieDnsUpdater" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="265" height="90"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMinY="YES"/>
+            <subviews>
+                <textField horizontalHuggingPriority="251" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="y0r-tu-wD5">
+                    <rect key="frame" x="85" y="8" width="175" height="70"/>
+                    <textFieldCell key="cell" scrollable="YES" lineBreakMode="clipping" sendsActionOnEndEditing="YES" title="a" id="mxE-oL-rAk">
+                        <font key="font" size="13" name="STHeitiTC-Light"/>
+                        <color key="textColor" name="labelColor" catalog="System" colorSpace="catalog"/>
+                        <color key="backgroundColor" name="controlColor" catalog="System" colorSpace="catalog"/>
+                    </textFieldCell>
+                </textField>
+                <imageView horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Kmp-5r-cad">
+                    <rect key="frame" x="8" y="9" width="72" height="72"/>
+                    <imageCell key="cell" refusesFirstResponder="YES" alignment="left" imageScaling="proportionallyDown" id="OSu-lW-0ss"/>
+                </imageView>
+            </subviews>
+            <connections>
+                <outlet property="imageView" destination="Kmp-5r-cad" id="s27-8H-t60"/>
+                <outlet property="statusLabel" destination="y0r-tu-wD5" id="051-9D-ZZG"/>
+            </connections>
+            <point key="canvasLocation" x="348.5" y="29"/>
+        </customView>
+    </objects>
+</document>
