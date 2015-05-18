@@ -23,7 +23,6 @@ ehthumbs.db
 Thumbs.db
 
 *target*
-*.jar
 *.war
 *.ear
 *.class
